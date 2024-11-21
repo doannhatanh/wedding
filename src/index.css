@@ -1,13 +1,460 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap");
+
+[data-aos^="zoom"][data-aos^="zoom"].aos-animate {
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+}
+[data-aos][data-aos][data-aos-easing="ease"],
+body[data-aos-easing="ease"] [data-aos] {
+  transition-timing-function: ease;
+}
+[data-aos][data-aos][data-aos-duration="400"],
+body[data-aos-duration="400"] [data-aos] {
+  transition-duration: 0.4s;
+}
+[data-aos^="zoom"][data-aos^="zoom"] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif, "Bellota Text";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #c4bba4;
+  color: #212529;
+  text-align: var(--bs-body-text-align);
+  display: block;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+section {
+  unicode-bidi: isolate;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+.wrapper {
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+  max-width: 575px;
+  margin: 0 auto;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.main_area {
+  position: relative;
+  text-align: center;
+  background-color: #f6f3ec;
+}
+
+.main_area .day_area {
+  margin: 0 auto;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #d8cba9;
+}
+
+.main_area .day_wrapper {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 100%;
+  z-index: 1;
+}
+
+.main_area .day_area .day_area_inner {
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.section-sub-title {
+  font-family: "Texturina", serif;
+  font-size: 1.1rem;
+  font-weight: 200 !important;
+}
+
+.main_area .day_area_inner > span {
+  display: block;
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 30px;
+  height: 30px;
+}
+
+.main_image {
+  overflow: hidden;
+}
+
+.main_area .wedding_area {
+  font-size: 2.2em;
+}
+
+.main_area .wedding_area {
+  color: #8c846d;
+  font-size: 1.6em;
+  line-height: 50px;
+  letter-spacing: 3px;
+}
+
+.section-title {
+  font-family: "Arima", cursive;
+  font-size: 2.6rem;
+  color: #8c846d;
+}
+
+.main_area {
+  position: relative;
+  text-align: center;
+  background-color: #f6f3ec;
+}
+
+#btn-see-more-gallery {
+  border-radius: 50px;
+  padding: 12px 24px;
+}
+
+.gallery-section .btn-secondary.btn-see-more-gallery {
+  background: #d2c5a2;
+  border-color: #d2c5a2;
+}
+
+.weddingdate-section {
+  background: url(../public/d-day_title.png) no-repeat center 40px;
+  background-size: 50px auto;
+}
+
+.weddingdate-section .mini_calendar {
+  max-width: 420px;
+  border-bottom: 1px solid #cfcfd0;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-bottom: 20px;
+}
+
+.weddingdate-section .mini_calendar table {
+  caption-side: top;
+  width: 100%;
+}
+
+.story-section .timeline-card:nth-child(odd) {
+  padding: 30px 20px 30px 20px;
+}
+.story-section .timeline-card:first-child {
+  padding-top: 0 !important;
+}
+[data-aos][data-aos][data-aos-easing="ease"],
+body[data-aos-easing="ease"] [data-aos] {
+  transition-timing-function: ease;
+}
+[data-aos][data-aos][data-aos-duration="400"],
+body[data-aos-duration="400"] [data-aos] {
+  transition-duration: 0.4s;
+}
+.story-section .timeline-card {
+  position: relative;
+}
+[data-aos^="fade"][data-aos^="fade"] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+[data-aos="fade-right"] {
+  transform: translate3d(-100px, 0, 0);
+}
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  unicode-bidi: isolate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+.weddingdate-section .mini_calendar .calendar-month,
+.weddingdate-section .mini_calendar table th {
+  color: #8c846d;
+}
+.weddingdate-section .mini_calendar .calendar-month {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: #203447;
+  text-transform: uppercase;
+}
+caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #6c757d;
+  text-align: left;
+}
+
+.weddingdate-section #clock {
+  max-width: 485px;
+  overflow: hidden;
+}
+
+.weddingdate-section #clock > div {
+  color: #8c846d;
+}
+.weddingdate-section #clock > div {
+  width: 25%;
+  float: left;
+  text-align: center;
+  padding: 30px 15px 0;
+}
+
+.weddingdate-section .mini_calendar .calendar-month,
+.weddingdate-section .mini_calendar table th {
+  color: #8c846d;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+.weddingdate-section .mini_calendar table th {
+  text-align: center;
+  padding: 8px 0;
+  border-top: 1px solid #cfcfd0;
+  border-bottom: 1px solid #cfcfd0;
+}
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+th {
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
+
+.weddingdate-section .mini_calendar td #today {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  padding: 5px;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #d2c5a2;
+}
+
+.story-section .timeline-card:nth-child(odd) {
+  padding: 30px 20px 30px 20px;
+}
+.story-section .timeline-card:first-child {
+  padding-top: 0 !important;
+}
+[data-aos^="fade"][data-aos^="fade"].aos-animate {
+  opacity: 1;
+  transform: translateZ(0);
+}
+[data-aos][data-aos][data-aos-easing="ease"],
+body[data-aos-easing="ease"] [data-aos] {
+  transition-timing-function: ease;
+}
+[data-aos][data-aos][data-aos-duration="400"],
+body[data-aos-duration="400"] [data-aos] {
+  transition-duration: 0.4s;
+}
+
+.story-section .timeline-card {
+  position: relative;
+}
+[data-aos^="fade"][data-aos^="fade"] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+.story-section .timeline-card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+.story-section .timeline-card:nth-child(odd)::before {
+  left: 0px;
+  top: -3px;
+  bottom: -3px;
+  border-width: 3px 0 3px 3px;
+  border-radius: 50px 0 0 50px;
+}
+.story-section .timeline-card::before {
+  border-color: #d3c4a1;
+}
+.story-section .timeline-card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: solid orangered;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+.story-section .timeline .info {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.story-section .timeline .title {
+  color: #8c846d;
+}
+.story-section .timeline .title {
+  position: relative;
+}
+.title {
+  font-family: "Arima", cursive;
+  font-size: 1.2rem;
+  font-weight: 600 !important;
+}
+
+.timeline-card .img-holder {
+  border-radius: 20px;
+  overflow: hidden;
 }
